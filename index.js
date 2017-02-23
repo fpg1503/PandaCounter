@@ -13,8 +13,12 @@ var router = express.Router();
 
 router.get('/iOS', function(req, res) {
 	client.get('iOS', function(err, reply) {
-	    res.json({ "iOS": reply });   
+	    res.json({ 'iOS': reply || 0 });   
 	});
+});
+
+router.post('/iOS', function(req, res) {
+	res.json({ 'iOS': client.incr('iOS') });
 });
 
 
