@@ -1,10 +1,6 @@
 var express    = require('express');
 var app        = express();
 var client 	   = require('redis').createClient(process.env.REDIS_URL);
-var bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;
 
@@ -18,11 +14,14 @@ router.get('/iOS', function(req, res) {
 });
 
 router.post('/iOS', function(req, res) {
-	res.json({ 'iOS': client.incr('iOS') });
+	client.incr('iOS');
+	client.get('iOS', function(err, reply) {
+	    res.json({ 'iOS': reply || 0 });   
+	});
 });
 
 
 app.use('/', router);
 
 app.listen(port);
-console.log('Magic happens on port ' + port);
+console.log('Listening to ' + port);

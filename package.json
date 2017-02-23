@@ -2,7 +2,6 @@
   "name": "panda-counter",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.16.1",
     "express": "~4.0.0",
     "redis": "^2.6.5"
   }
