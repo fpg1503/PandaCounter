@@ -11,8 +11,10 @@ var port = process.env.PORT || 8080;
 
 var router = express.Router();
 
-router.get('/', function(req, res) {
-    res.json({ message: 'Hello World' });   
+router.get('/iOS', function(req, res) {
+	client.get('iOS', function(err, reply) {
+	    res.json({ "iOS": reply });   
+	});
 });
 
 
