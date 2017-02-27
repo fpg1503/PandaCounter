@@ -10,12 +10,18 @@
 
 ## Response format
 
-### list
+### List
 ```javascript
 {"animals":[":panda_face:",":koala:",":unicorn_face:",":dolphin:",":dove_of_peace:"]}
-````
+```
 
 ### Specific animal
 ```javascript
 {":panda_face:":"3"}
 ```
+
+## Requirements
+- Heroku
+- Heroku Redis
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)

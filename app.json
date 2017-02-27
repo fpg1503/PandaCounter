@@ -1,0 +1,6 @@
+{
+  "name": "Panda Counter",
+  "description": "A barebones Node.js app using Express 4",
+  "repository": "https://github.com/fpg1503/PandaCounter",
+  "keywords": ["node", "express", "redis", "panda", "iOS"]
+}
