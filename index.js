@@ -42,7 +42,7 @@ router.delete('/:animal', (req, res) => {
 	var hashedPassword = sha256.update(password, 'utf8').digest('hex');
 	console.log(hashedPassword)
 	if (hashedPassword == '171f0e636fc5a5ce5a3ada753320ee682e4876e752ac42dd891eda1ea6f4517f') {
-		client.delete(animal, (error, reply) => {
+		client.del(animal, (error, reply) => {
 			res.send(200)
 		});
 	} else {
