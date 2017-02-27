@@ -9,7 +9,9 @@ var router = express.Router();
 
 router.get('/:animal', function(req, res) {
 	var animal = req.params.animal;
+	console.log(animal);
 	client.get(animal, function(err, reply) {
+		console.log(animal);
 	    res.json({ animal: reply || 0 });   
 	});
 });
