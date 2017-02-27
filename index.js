@@ -4,8 +4,11 @@ var client 	   = require('redis').createClient(process.env.REDIS_URL);
 
 var port = process.env.PORT || 8080;
 
-
 var router = express.Router();
+
+router.get('/', (req, res) => {
+	res.json({ Hello: 'world'});
+});
 
 router.get('/:animal', (req, res) => {
 	var animal = req.params.animal;
