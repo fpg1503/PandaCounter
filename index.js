@@ -7,6 +7,12 @@ var port = process.env.PORT || 8080;
 
 var router = express.Router();
 
+router.get('/', (req, res) => {
+	var allAnimals = client.keys('*', (keys) => {
+		res.json({ 'keys': keys});
+	});
+});
+
 router.get('/:animal', function(req, res) {
 	var animal = req.params.animal;
 	client.get(animal, function(err, reply) {
