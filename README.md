@@ -1,13 +1,15 @@
 # PandaCounter
-🐼 A simple web app to count how many people mistyped iOS
+🐼 A simple web app to count how many people mistyped iOS and related terms
 
 ## Usage
-**GET** `/iOS` to view current count
+**GET** `/` to view the animals list
 
-**POST** `/iOS` to report a dead panda
+**GET** `/:animal` to view current count
+
+**POST** `/:animal` to report a dead aniaml
 
 ## Response format
 
 ```javascript
-{"iOS":"3"}
+{":panda_face:":"3"}
 ```
