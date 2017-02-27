@@ -2,7 +2,7 @@ var express    = require('express');
 var app        = express();
 var client 	   = require('redis').createClient(process.env.REDIS_URL);
 var createHash = require('sha.js');
-var sha256	   = createHash(sha256);
+var sha256	   = createHash('sha256');
 
 
 var port = process.env.PORT || 8080;
