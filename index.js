@@ -8,7 +8,7 @@ var port = process.env.PORT || 8080;
 var router = express.Router();
 
 router.get('/:animal', function(req, res) {
-	res.json({ 'animal': req.route.params.animal });
+	res.json({ 'animal': req.params.animal });
 	// client.get('iOS', function(err, reply) {
 	    // res.json({ 'iOS': reply || 0 });   
 	// });
