@@ -1,6 +1,6 @@
 {
   "name": "Panda Counter",
-  "description": "A barebones Node.js app using Express 4",
+  "description": "A simple web app to count how many people mistyped iOS and related terms",
   "repository": "https://github.com/fpg1503/PandaCounter",
   "keywords": ["node", "express", "redis", "panda", "iOS"]
 }
