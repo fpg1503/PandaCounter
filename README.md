@@ -6,10 +6,16 @@
 
 **GET** `/:animal` to view current count
 
-**POST** `/:animal` to report a dead aniaml
+**POST** `/:animal` to report a dead animal
 
 ## Response format
 
+### list
+```javascript
+{"animals":[":panda_face:",":koala:",":unicorn_face:",":dolphin:",":dove_of_peace:"]}
+````
+
+### Specific animal
 ```javascript
 {":panda_face:":"3"}
 ```
