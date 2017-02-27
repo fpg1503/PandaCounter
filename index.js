@@ -7,20 +7,22 @@ var port = process.env.PORT || 8080;
 
 var router = express.Router();
 
-router.get('/:animal', function(req, res) {
+router.get('/:animal', (req, res) => {
 	var animal = req.params.animal;
-	console.log(animal);
-	client.get(animal, function(err, reply) {
-		console.log(animal);
-	    res.json({ animal: reply || 0 });   
+	client.get(animal, (err, reply) => {
+		var response = {};
+		response[animal] = reply || 0;
+	    res.json(response);   
 	});
 });
 
-router.post('/:animal', function(req, res) {
+router.post('/:animal', (req, res) => {
 	var animal = req.params.animal;
 	client.incr(animal);
-	client.get(animal, function(err, reply) {
-	    res.json({ animal: reply || 0 });   
+	client.get(animal, (err, reply) => {
+	    var response = {};
+		response[animal] = reply || 0;
+	    res.json(response);
 	});
 });
 
