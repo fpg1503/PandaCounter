@@ -39,10 +39,8 @@ router.delete('/:animal', (req, res) => {
 		res.json({ error: 'Please provide a password'});
 	}
 
-	console.log(password);
 	var hashedPassword = sha256.update(password, 'utf8').digest('hex');
-	console.log(hashedPassword);
-	if (hashedPassword == '171f0e636fc5a5ce5a3ada753320ee682e4876e752ac42dd891eda1ea6f4517f') {
+	if (hashedPassword == '9fa6f2fa837ac569df65f0481d6fd8a34d620e9b501b91209ccecc7e9831cb3e') {
 		client.delete(animal, (error, reply) => {
 			res.send(200)
 		});
