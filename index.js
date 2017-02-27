@@ -8,16 +8,17 @@ var port = process.env.PORT || 8080;
 var router = express.Router();
 
 router.get('/:animal', function(req, res) {
-	res.json({ 'animal': req.params.animal });
-	// client.get('iOS', function(err, reply) {
-	    // res.json({ 'iOS': reply || 0 });   
-	// });
+	var animal = req.params.animal;
+	client.get(animal, function(err, reply) {
+	    res.json({ animal: reply || 0 });   
+	});
 });
 
-router.post('/iOS', function(req, res) {
-	client.incr('iOS');
-	client.get('iOS', function(err, reply) {
-	    res.json({ 'iOS': reply || 0 });   
+router.post('/:animal', function(req, res) {
+	var animal = req.params.animal;
+	client.incr(animal);
+	client.get(animal, function(err, reply) {
+	    res.json({ animal: reply || 0 });   
 	});
 });
 
