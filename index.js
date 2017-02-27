@@ -28,10 +28,22 @@ router.post('/:animal', (req, res) => {
 });
 
 router.delete('/:animal', (req, res) => {
+	var animal = req.params.animal;
 	var password = req.params.password;
+
 	if (password == undefined) {
 		res.statusCode = 400
 		res.json({ error: 'Please provide a password'});
+	}
+
+	var hashedPassword = sha256(password);
+	if (hashedPassword == '171f0e636fc5a5ce5a3ada753320ee682e4876e752ac42dd891eda1ea6f4517f') {
+		client.delete(animal, (error, reply) => {
+			res.send(200)
+		});
+	} else {
+		res.statusCode = 401
+		res.json({ error: 'Invalid password'});
 	}
 });
 
