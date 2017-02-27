@@ -11,7 +11,7 @@ var router = express.Router();
 
 router.get('/', (req, res) => {
 	client.keys('*', (err, keys) => {
-		res.json({ keys: keys });
+		res.json({ animals: keys });
 	});
 });
 
