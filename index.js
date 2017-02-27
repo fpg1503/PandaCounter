@@ -27,6 +27,13 @@ router.post('/:animal', (req, res) => {
 	});
 });
 
+router.delete('/:animal', (req, res) => {
+	var password = req.params.password;
+	if (password == undefined) {
+		res.statusCode = 400
+		res.json({ error: 'Please provide a password'});
+	}
+});
 
 app.use('/', router);
 
