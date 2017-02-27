@@ -29,7 +29,7 @@ router.post('/:animal', (req, res) => {
 
 router.delete('/:animal', (req, res) => {
 	var animal = req.params.animal;
-	var password = req.params.password;
+	var password = req.query.password;
 
 	if (password == undefined) {
 		res.statusCode = 400
