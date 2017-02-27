@@ -10,9 +10,7 @@ var router = express.Router();
 router.get('/:animal', (req, res) => {
 	var animal = req.params.animal;
 	client.get(animal, (err, reply) => {
-		var response = {};
-		response[animal] = reply || 0;
-	    res.json(response);   
+	    res.json({ [animal]: reply || 0 });
 	});
 });
 
@@ -20,9 +18,7 @@ router.post('/:animal', (req, res) => {
 	var animal = req.params.animal;
 	client.incr(animal);
 	client.get(animal, (err, reply) => {
-	    var response = {};
-		response[animal] = reply || 0;
-	    res.json(response);
+	    res.json({ [animal]: reply || 0 });
 	});
 });
 
